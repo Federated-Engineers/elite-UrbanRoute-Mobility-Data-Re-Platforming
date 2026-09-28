@@ -1,6 +1,6 @@
 resource "snowflake_schema" "bronze" {
   database = snowflake_database.urban_route_db.name
-  name     = "Bronze"
+  name     = "BRONZE"
 }
 
 resource "snowflake_schema" "silver" {
