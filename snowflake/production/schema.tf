@@ -1,4 +1,4 @@
-resource "snowflake_schema" "bronze" {
+resource "snowflake_schema" "bronze_schema" {
   database = snowflake_database.urban_route_db.name
   name     = "BRONZE"
 }
