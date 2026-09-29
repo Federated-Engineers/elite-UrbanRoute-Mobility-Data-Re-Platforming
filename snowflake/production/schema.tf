@@ -17,3 +17,4 @@ resource "snowflake_schema" "dev" {
   database = snowflake_database.urban_route_test_db.name
   name     = "DEV"
 }
+
