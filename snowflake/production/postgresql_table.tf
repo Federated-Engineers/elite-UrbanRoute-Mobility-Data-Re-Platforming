@@ -1,6 +1,6 @@
 resource "snowflake_table" "users" {
   database = snowflake_database.urban_route_db.name
-  schema   = snowflake_schema.bronze.name
+  schema   = snowflake_schema.bronze_schema.name
   name     = "USERS"
 
   comment = "Bronze user data ingested from PostgreSQL."
@@ -38,7 +38,7 @@ resource "snowflake_table" "users" {
 
 resource "snowflake_table" "vehicles" {
   database = snowflake_database.urban_route_db.name
-  schema   = snowflake_schema.bronze.name
+  schema   = snowflake_schema.bronze_schema.name
   name     = "VEHICLES"
 
   comment = "Bronze vehicle data ingested from PostgreSQL."
@@ -76,7 +76,7 @@ resource "snowflake_table" "vehicles" {
 
 resource "snowflake_table" "app_payments" {
   database = snowflake_database.urban_route_db.name
-  schema   = snowflake_schema.bronze.name
+  schema   = snowflake_schema.bronze_schema.name
   name     = "APP_PAYMENTS"
 
   comment = "Bronze digital payment data ingested from PostgreSQL."

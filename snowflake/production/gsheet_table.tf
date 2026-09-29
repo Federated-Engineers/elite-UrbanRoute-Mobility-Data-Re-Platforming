@@ -1,6 +1,6 @@
 resource "snowflake_table" "payments" {
   database = snowflake_database.urban_route_db.name
-  schema   = snowflake_schema.bronze.name
+  schema   = snowflake_schema.bronze_schema.name
   name     = "PAYMENTS"
 
   column {

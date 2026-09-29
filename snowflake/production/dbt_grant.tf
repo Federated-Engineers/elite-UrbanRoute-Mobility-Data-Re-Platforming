@@ -20,7 +20,7 @@ resource "snowflake_grant_privileges_to_account_role" "dbt_bronze" {
   privileges        = ["USAGE"]
   account_role_name = snowflake_account_role.dbt_role.name
   on_schema {
-    schema_name = snowflake_schema.bronze.fully_qualified_name
+    schema_name = snowflake_schema.bronze_schema.fully_qualified_name
   }
 }
 
@@ -47,7 +47,7 @@ resource "snowflake_grant_privileges_to_account_role" "dbt_bronze_table" {
   on_schema_object {
     all {
       object_type_plural = "TABLES"
-      in_schema          = snowflake_schema.bronze.fully_qualified_name
+      in_schema          = snowflake_schema.bronze_schema.fully_qualified_name
     }
   }
 }
@@ -80,7 +80,7 @@ resource "snowflake_grant_privileges_to_account_role" "dbt_bronze_tables_future_
   on_schema_object {
     future {
       object_type_plural = "TABLES"
-      in_schema          = snowflake_schema.bronze.fully_qualified_name
+      in_schema          = snowflake_schema.bronze_schema.fully_qualified_name
     }
   }
 }
