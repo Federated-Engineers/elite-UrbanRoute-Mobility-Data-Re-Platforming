@@ -3,6 +3,11 @@ resource "snowflake_schema" "bronze_schema" {
   name     = "BRONZE"
 }
 
+resource "snowflake_schema" "bronze_schema_tes" {
+  database = snowflake_database.urban_route_db.name
+  name     = "BRONZE_TEST"
+}
+
 resource "snowflake_schema" "raw" {
   database = snowflake_database.urban_route_db.name
   name     = "RAW"
