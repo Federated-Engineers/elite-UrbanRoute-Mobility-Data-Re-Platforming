@@ -9,7 +9,7 @@ resource "snowflake_grant_ownership" "transfer_ownership_to_airflow" {
   outbound_privileges = "COPY"
 }
 
-resource "snowflake_grant_ownership" "transfer_ownership_to_airflow" {
+resource "snowflake_grant_ownership" "transfer_ownership_to_airflow_raw" {
   account_role_name = snowflake_account_role.airflow_role.name
 
   on {
@@ -30,7 +30,7 @@ resource "snowflake_grant_privileges_to_account_role" "airflow_stage_grant" {
   }
 }
 
-resource "snowflake_grant_privileges_to_account_role" "airflow_stage_grant" {
+resource "snowflake_grant_privileges_to_account_role" "airflow_stage_grant_raw" {
   account_role_name = snowflake_account_role.airflow_role.name
   privileges        = ["USAGE"]
 
