@@ -24,6 +24,14 @@ resource "snowflake_grant_privileges_to_account_role" "dbt_bronze" {
   }
 }
 
+resource "snowflake_grant_privileges_to_account_role" "dbt_raw" {
+  privileges        = ["USAGE"]
+  account_role_name = snowflake_account_role.dbt_role.name
+  on_schema {
+    schema_name = snowflake_schema.raw.fully_qualified_name
+  }
+}
+
 resource "snowflake_grant_privileges_to_account_role" "dbt_silver" {
   account_role_name = snowflake_account_role.dbt_role.name
   on_schema {
@@ -48,6 +56,17 @@ resource "snowflake_grant_privileges_to_account_role" "dbt_bronze_table" {
     all {
       object_type_plural = "TABLES"
       in_schema          = snowflake_schema.bronze_schema.fully_qualified_name
+    }
+  }
+}
+
+resource "snowflake_grant_privileges_to_account_role" "dbt_raw_table" {
+  privileges        = ["SELECT"]
+  account_role_name = snowflake_account_role.dbt_role.name
+  on_schema_object {
+    all {
+      object_type_plural = "TABLES"
+      in_schema          = snowflake_schema.raw.fully_qualified_name
     }
   }
 }
@@ -81,6 +100,17 @@ resource "snowflake_grant_privileges_to_account_role" "dbt_bronze_tables_future_
     future {
       object_type_plural = "TABLES"
       in_schema          = snowflake_schema.bronze_schema.fully_qualified_name
+    }
+  }
+}
+
+resource "snowflake_grant_privileges_to_account_role" "dbt_raw_tables_future_table" {
+  privileges        = ["SELECT"]
+  account_role_name = snowflake_account_role.dbt_role.name
+  on_schema_object {
+    future {
+      object_type_plural = "TABLES"
+      in_schema          = snowflake_schema.raw.fully_qualified_name
     }
   }
 }
