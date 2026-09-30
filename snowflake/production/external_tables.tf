@@ -69,8 +69,8 @@ resource "snowflake_external_table" "trips_ext_raw" {
   schema       = snowflake_schema.raw.name
   name         = "TRIPS"
   comment      = "External table of trip JSON files stored in S3."
-  location     = "@${snowflake_stage_external_s3.urban_route_stage.fully_qualified_name}"
-  file_format  = "FORMAT_NAME = ${snowflake_file_format.json_data.fully_qualified_name}"
+  location     = "@${snowflake_stage_external_s3.urban_route_stage_raw.fully_qualified_name}"
+  file_format  = "FORMAT_NAME = ${snowflake_file_format.json_data_raw.fully_qualified_name}"
   auto_refresh = true
 
   column {
