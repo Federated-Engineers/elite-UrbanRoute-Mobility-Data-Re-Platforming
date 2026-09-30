@@ -35,6 +35,14 @@ resource "snowflake_grant_privileges_to_account_role" "data_engineer_bronze" {
   }
 }
 
+resource "snowflake_grant_privileges_to_account_role" "data_engineer_raw" {
+  privileges        = ["USAGE"]
+  account_role_name = snowflake_account_role.data_engineer.name
+  on_schema {
+    schema_name = snowflake_schema.raw.fully_qualified_name
+  }
+}
+
 resource "snowflake_grant_privileges_to_account_role" "data_engineer_silver" {
   privileges        = ["USAGE", "CREATE TABLE", "CREATE VIEW"]
   account_role_name = snowflake_account_role.data_engineer.name
@@ -68,6 +76,17 @@ resource "snowflake_grant_privileges_to_account_role" "data_engineer_bronze_tabl
     all {
       object_type_plural = "TABLES"
       in_schema          = snowflake_schema.bronze_schema.fully_qualified_name
+    }
+  }
+}
+
+resource "snowflake_grant_privileges_to_account_role" "data_engineer_raw_table" {
+  privileges        = ["SELECT"]
+  account_role_name = snowflake_account_role.data_engineer.name
+  on_schema_object {
+    all {
+      object_type_plural = "TABLES"
+      in_schema          = snowflake_schema.raw.fully_qualified_name
     }
   }
 }

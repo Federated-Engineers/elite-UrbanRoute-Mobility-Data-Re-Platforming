@@ -24,6 +24,14 @@ resource "snowflake_grant_privileges_to_account_role" "airflow_role_bronze" {
   }
 }
 
+resource "snowflake_grant_privileges_to_account_role" "airflow_role_raw" {
+  privileges        = ["USAGE"]
+  account_role_name = snowflake_account_role.airflow_role.name
+  on_schema {
+    schema_name = snowflake_schema.raw.fully_qualified_name
+  }
+}
+
 resource "snowflake_grant_privileges_to_account_role" "airflow_bronze_table" {
   privileges        = ["SELECT", "INSERT"]
   account_role_name = snowflake_account_role.airflow_role.name
@@ -35,6 +43,17 @@ resource "snowflake_grant_privileges_to_account_role" "airflow_bronze_table" {
   }
 }
 
+resource "snowflake_grant_privileges_to_account_role" "airflow_raw_table" {
+  privileges        = ["SELECT", "INSERT"]
+  account_role_name = snowflake_account_role.airflow_role.name
+  on_schema_object {
+    all {
+      object_type_plural = "TABLES"
+      in_schema          = snowflake_schema.raw.fully_qualified_name
+    }
+  }
+}
+
 resource "snowflake_grant_privileges_to_account_role" "airflow_future_bronze_table" {
   privileges        = ["SELECT", "INSERT"]
   account_role_name = snowflake_account_role.airflow_role.name
@@ -42,6 +61,17 @@ resource "snowflake_grant_privileges_to_account_role" "airflow_future_bronze_tab
     future {
       object_type_plural = "TABLES"
       in_schema          = snowflake_schema.bronze_schema.fully_qualified_name
+    }
+  }
+}
+
+resource "snowflake_grant_privileges_to_account_role" "airflow_future_raw_table" {
+  privileges        = ["SELECT", "INSERT"]
+  account_role_name = snowflake_account_role.airflow_role.name
+  on_schema_object {
+    future {
+      object_type_plural = "TABLES"
+      in_schema          = snowflake_schema.raw.fully_qualified_name
     }
   }
 }
