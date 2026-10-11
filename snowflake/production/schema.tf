@@ -28,4 +28,3 @@ resource "snowflake_schema" "dev" {
   name     = "DEV"
 }
 
-
