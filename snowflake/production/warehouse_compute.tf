@@ -74,4 +74,3 @@ module "dbt_ci_wh" {
   snowflake_warehouse_initially_suspended = var.snowflake_warehouse_initially_suspended
   snowflake_warehouse_comment             = var.snowflake_warehouse_comment
 }
-
