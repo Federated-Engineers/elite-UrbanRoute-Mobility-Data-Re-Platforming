@@ -27,8 +27,3 @@ resource "snowflake_schema" "dev" {
   database = snowflake_database.urban_route_test_db.name
   name     = "DEV"
 }
-
-resource "snowflake_schema" "dbt_ci" {
-  database = snowflake_database.urban_route_db.name
-  name     = "DBT_CI"
-}
