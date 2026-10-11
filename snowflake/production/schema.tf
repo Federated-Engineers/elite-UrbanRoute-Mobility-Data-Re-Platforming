@@ -28,4 +28,7 @@ resource "snowflake_schema" "dev" {
   name     = "DEV"
 }
 
-
+resource "snowflake_schema" "dbt_ci" {
+  database = snowflake_database.urban_route_db.name
+  name     = "DBT_CI"
+}
