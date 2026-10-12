@@ -1,0 +1,23 @@
+name: CI pipeline
+on:
+  pull_request:
+    paths:
+      - "**.tf"
+
+jobs:
+  ci:
+    name: terraform ci for dbt_infra
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v6
+
+      - name: Check Terraform file are formatted correctly
+        uses: dflook/terraform-fmt-check@v2
+        with:
+          path: ./dbt_infra
+
+      - name: terraform validate
+        uses: dflook/terraform-validate@v2
+        with:
+          path: ./dbt_infra
