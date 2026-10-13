@@ -21,3 +21,4 @@ jobs:
         uses: dflook/terraform-validate@v2
         with:
           path: ./dbt_infra
+

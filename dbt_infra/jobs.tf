@@ -47,3 +47,4 @@ resource "dbtcloud_job" "slim_ci_job" {
     timeout_seconds = 3600
   }
 }
+

@@ -4,7 +4,7 @@ resource "snowflake_grant_privileges_to_account_role" "dbt_ci_warehouse" {
 
   on_account_object {
     object_type = "WAREHOUSE"
-    object_name = module.dbt_wh.snowflake_warehouse.urban-route-warehouse.name
+    object_name = module.dbt_ci_wh.name
   }
 }
 

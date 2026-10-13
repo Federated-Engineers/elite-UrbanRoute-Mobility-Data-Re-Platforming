@@ -88,3 +88,4 @@ variable "dbt_threads" {
   description = "Threads used by the dbt Cloud jobs"
   default     = 8
 }
+

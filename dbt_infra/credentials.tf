@@ -17,3 +17,4 @@ resource "dbtcloud_snowflake_credential" "slim_ci" {
   user        = var.snowflake_dbt_ci_user
   password    = data.aws_ssm_parameter.snowflake_password.value
 }
+

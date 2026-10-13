@@ -17,3 +17,4 @@ resource "dbtcloud_environment" "slim_ci_environment" {
   deployment_type = "staging"
   connection_id   = dbtcloud_global_connection.snowflake_connection.id
 }
+

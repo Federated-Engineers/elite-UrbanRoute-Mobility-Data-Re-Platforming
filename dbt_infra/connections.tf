@@ -7,3 +7,4 @@ resource "dbtcloud_global_connection" "snowflake_connection" {
     warehouse = var.snowflake_prod_warehouse
   }
 }
+
