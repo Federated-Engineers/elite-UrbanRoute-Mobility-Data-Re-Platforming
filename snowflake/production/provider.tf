@@ -25,3 +25,4 @@ provider "snowflake" {
     "snowflake_external_table_resource"
   ]
 }
+

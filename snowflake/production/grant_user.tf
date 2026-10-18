@@ -27,3 +27,5 @@ resource "snowflake_grant_account_role" "data_user_role" {
   role_name = snowflake_account_role.data_role.name
   user_name = module.platform_admin_user.name
 }
+
+

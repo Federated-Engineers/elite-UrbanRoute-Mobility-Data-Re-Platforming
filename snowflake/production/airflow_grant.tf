@@ -93,3 +93,4 @@ resource "snowflake_grant_privileges_to_account_role" "airflow_file_format" {
     object_name = snowflake_file_format.json_data.fully_qualified_name
   }
 }
+

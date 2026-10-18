@@ -13,3 +13,4 @@ resource "snowflake_file_format" "json_data_raw" {
   format_type = "JSON"
   comment     = "JSON file format for S3 ingestion"
 }
+

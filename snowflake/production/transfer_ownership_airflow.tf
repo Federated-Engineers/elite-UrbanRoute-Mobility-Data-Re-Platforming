@@ -49,3 +49,4 @@ resource "snowflake_grant_privileges_to_account_role" "airflow_file_format_usage
     object_name = snowflake_file_format.json_data_raw.fully_qualified_name
   }
 }
+

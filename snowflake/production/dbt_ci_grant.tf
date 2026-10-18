@@ -130,3 +130,4 @@ resource "snowflake_grant_privileges_to_account_role" "dbt_ci_mart_future_object
     }
   }
 }
+

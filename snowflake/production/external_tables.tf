@@ -128,4 +128,3 @@ resource "snowflake_external_table" "trips_ext_raw" {
   }
 
 }
-

@@ -265,3 +265,4 @@ resource "snowflake_table" "app_payments_raw" {
     type = "TIMESTAMP_NTZ"
   }
 }
+

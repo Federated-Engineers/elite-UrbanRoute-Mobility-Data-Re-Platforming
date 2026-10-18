@@ -33,4 +33,3 @@ resource "snowflake_account_role" "service_role" {
 resource "snowflake_account_role" "dbt_ci_role" {
   name = "DBT_CI_ROLE"
 }
-

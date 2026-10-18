@@ -50,3 +50,4 @@ variable "disable_mfa" {
   description = "Whether multi-factor authentication (MFA) is disabled for the user."
   default     = true
 }
+

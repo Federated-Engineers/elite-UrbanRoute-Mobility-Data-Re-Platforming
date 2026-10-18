@@ -145,3 +145,4 @@ resource "snowflake_table" "payments_raw" {
 
   comment = "Raw manual payment data ingested from Google Sheets"
 }
+

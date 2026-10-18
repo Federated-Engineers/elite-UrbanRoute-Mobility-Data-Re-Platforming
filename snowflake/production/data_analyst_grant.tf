@@ -121,3 +121,4 @@ resource "snowflake_grant_privileges_to_account_role" "data_analyst_future_gold_
     }
   }
 }
+

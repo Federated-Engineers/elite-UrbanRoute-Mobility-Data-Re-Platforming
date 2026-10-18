@@ -27,3 +27,4 @@ resource "snowflake_grant_account_role" "dbt_to_service_role" {
   role_name        = snowflake_account_role.dbt_role.name
   parent_role_name = snowflake_account_role.service_role.name
 }
+
