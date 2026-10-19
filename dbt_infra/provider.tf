@@ -18,9 +18,12 @@ terraform {
 }
 
 provider "dbtcloud" {
-  host_url   = var.dbt_cloud_host_url
-  account_id = var.dbt_cloud_account_id
-  token      = data.aws_ssm_parameter.dbt_cloud_service_token.value
+  host_url               = var.dbt_cloud_host_url
+  account_id             = var.dbt_cloud_account_id
+  token                  = data.aws_ssm_parameter.dbt_cloud_service_token.value
+  timeout_seconds        = 90
+  max_retries            = 5
+  retry_interval_seconds = 10
 }
 
 provider "aws" {
