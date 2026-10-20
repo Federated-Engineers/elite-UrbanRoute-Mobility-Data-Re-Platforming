@@ -2,7 +2,8 @@ name: CI pipeline
 on:
   pull_request:
     paths:
-      - "**.tf"
+      - "snowflake/**"
+      - ".github/workflows/terraform-ci.yaml"
 
 jobs:
   ci:
