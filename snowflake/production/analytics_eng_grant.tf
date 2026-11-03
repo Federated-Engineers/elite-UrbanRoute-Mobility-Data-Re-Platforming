@@ -192,3 +192,25 @@ resource "snowflake_grant_privileges_to_account_role" "dev_future_view" {
     }
   }
 }
+
+resource "snowflake_grant_privileges_to_account_role" "raw_external_tables" {
+  privileges        = ["SELECT"]
+  account_role_name = snowflake_account_role.analytics_engineer.name
+  on_schema_object {
+    all {
+      object_type_plural = "EXTERNAL TABLES"
+      in_schema          = snowflake_schema.raw.fully_qualified_name
+    }
+  }
+}
+
+resource "snowflake_grant_privileges_to_account_role" "raw_external_tables_future_grant" {
+  privileges        = ["SELECT"]
+  account_role_name = snowflake_account_role.analytics_engineer.name
+  on_schema_object {
+    future {
+      object_type_plural = "EXTERNAL TABLES"
+      in_schema          = snowflake_schema.raw.fully_qualified_name
+    }
+  }
+}
