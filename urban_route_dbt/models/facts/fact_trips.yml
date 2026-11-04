@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: fact_trips
+    description: |
+      Silver trip fact containing trip lifecycle, customer,
+      vehicle and distance information.
+    columns:
+      - name: trip_id
+        description: Unique trip identifier.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: user_id
+        description: Customer associated with the trip.
+
+      - name: vehicle_id
+        description: Vehicle used for the trip.
+
+      - name: start_time
+        description: Trip start timestamp.
+
+      - name: end_time
+        description: Trip end timestamp.
+
+      - name: distance_meters
+        description: Trip distance in metres.
+
+      - name: duration_seconds
+        description: Trip duration in seconds.

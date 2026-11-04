@@ -1,0 +1,43 @@
+
+version: 2
+
+models:
+  - name: stg_postgres_app_payments
+    description: |
+      Staging model for digital payment transactions originating
+      from the UrbanRoute application and ingested from PostgreSQL.
+      Contains payment amounts, discounts, refunds and net payment values.
+
+    columns:
+      - name: payment_id
+        description: "Unique identifier for the digital payment transaction."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: trip_id
+        description: "Identifier of the trip associated with the payment."
+
+      - name: user_id
+        description: "Identifier of the customer associated with the payment."
+
+      - name: payment_timestamp
+        description: "Timestamp when the payment transaction was recorded."
+
+      - name: source_system
+        description: "Originating system of the payment record."
+
+      - name: gross_amount_eur
+        description: "Gross payment amount before discounts and refunds, in EUR."
+
+      - name: discount_amount_eur
+        description: "Discount applied to the payment, in EUR."
+
+      - name: refund_amount_eur
+        description: "Refund amount associated with the payment, in EUR."
+
+      - name: net_amount_eur
+        description: "Net payment amount recorded for the transaction, in EUR."
+
+      - name: loaded_at
+        description: "Timestamp associated with loading the source record into Snowflake."

@@ -1,0 +1,9 @@
+version: 2
+sources:
+  - name: google_sheets
+    description: Raw csv data loaded from Google Sheets via Airflow
+    database: URBAN_ROUTE_DB
+    schema: RAW
+    tables:
+      - name: payments
+        description: Raw payment csv data

@@ -1,0 +1,16 @@
+
+urban_route_dbt:
+  target: dev
+
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: ANALYTICS_ENGINEER
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: ANALYTICS_ENGINEER
+      database: URBAN_ROUTE_TEST_DB
+      warehouse: ANALYTICS_ENGINEER_WH
+      schema: DEV
+      threads: 4
+

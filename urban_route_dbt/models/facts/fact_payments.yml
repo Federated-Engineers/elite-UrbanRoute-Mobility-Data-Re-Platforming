@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: fact_payments
+    description: |
+      Unified Silver financial ledger combining digital app payments
+      and manual finance payment records.
+    columns:
+      - name: payment_id
+        description: Payment identifier within its originating source.
+        data_tests:
+          - not_null
+
+      - name: source_system
+        description: Origin of the payment record.
+
+      - name: trip_id
+        description: Associated trip identifier, where available.
+
+      - name: user_id
+        description: Customer associated with the payment.
+
+      - name: payment_timestamp
+        description: Payment transaction timestamp.
+
+      - name: gross_amount_eur
+        description: Gross payment amount in EUR.
+
+      - name: discount_amount_eur
+        description: Discount amount in EUR.
+
+      - name: refund_amount_eur
+        description: Refund amount in EUR.
+
+      - name: net_amount_eur
+        description: Net payment amount in EUR.
