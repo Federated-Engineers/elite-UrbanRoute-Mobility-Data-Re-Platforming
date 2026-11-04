@@ -23,7 +23,7 @@ jobs:
           cache: "pip"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt -r requirements-dev.txt
+        run: pip install -r requirement.txt -r requirement-dev.txt
 
       - name: Run SQLFluff lint
         run: sqlfluff lint urban_route_dbt/models/
