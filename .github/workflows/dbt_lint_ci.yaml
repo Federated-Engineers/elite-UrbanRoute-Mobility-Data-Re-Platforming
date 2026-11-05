@@ -6,6 +6,8 @@ name: urban_route_ci_pipeline
       - "**/*.sql"
       - "urban_route_dbt/models/**"
       - "urban_route_dbt/dbt_project.yml"
+      - "requirement.txt"
+      - "requirement-dev.txt"
 
 jobs:
   dbt-ci:
