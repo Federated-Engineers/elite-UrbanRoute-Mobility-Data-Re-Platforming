@@ -90,4 +90,3 @@ left join daily_revenue as r
     on
         t.date_ = r.date_
         and t.vehicle_type = r.vehicle_type
-

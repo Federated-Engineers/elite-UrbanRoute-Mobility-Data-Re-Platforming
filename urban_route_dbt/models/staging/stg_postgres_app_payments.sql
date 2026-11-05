@@ -17,4 +17,3 @@ with app_payments as (
 
 select *
 from app_payments
-

@@ -19,4 +19,3 @@ with manual_payments as (
 
 select *
 from manual_payments
-
