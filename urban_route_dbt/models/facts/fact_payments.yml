@@ -10,6 +10,7 @@ models:
         description: Payment identifier within its originating source.
         data_tests:
           - not_null
+          - unique
 
       - name: source_system
         description: Origin of the payment record.

@@ -10,6 +10,7 @@ models:
         description: Unique vehicle identifier.
         data_tests:
           - not_null
+          - unique
 
       - name: vehicle_type
         description: Vehicle classification, such as Scooter or Bike.

@@ -13,6 +13,7 @@ models:
         description: "Unique identifier assigned to each vehicle."
         data_tests:
           - not_null
+          - unique
 
       - name: vehicle_type
         description: "Classification of the vehicle, such as Scooter or Bike."
