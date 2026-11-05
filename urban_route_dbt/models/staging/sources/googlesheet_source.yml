@@ -7,3 +7,4 @@ sources:
     tables:
       - name: payments
         description: Raw payment csv data
+

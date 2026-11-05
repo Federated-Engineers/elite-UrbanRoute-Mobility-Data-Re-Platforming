@@ -13,4 +13,3 @@ urban_route_dbt:
       warehouse: ANALYTICS_ENGINEER_WH
       schema: DEV
       threads: 4
-

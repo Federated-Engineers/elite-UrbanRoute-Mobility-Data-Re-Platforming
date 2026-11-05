@@ -34,3 +34,4 @@ models:
 
       - name: net_amount_eur
         description: Net payment amount in EUR.
+

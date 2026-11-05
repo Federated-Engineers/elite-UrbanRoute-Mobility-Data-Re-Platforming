@@ -28,3 +28,4 @@ models:
 
       - name: total_net_revenue_eur
         description: Net revenue in EUR after applicable discounts and refunds.
+

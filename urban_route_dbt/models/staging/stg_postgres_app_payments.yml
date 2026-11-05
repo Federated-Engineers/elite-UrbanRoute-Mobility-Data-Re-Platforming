@@ -41,3 +41,4 @@ models:
 
       - name: loaded_at
         description: "Timestamp associated with loading the source record into Snowflake."
+

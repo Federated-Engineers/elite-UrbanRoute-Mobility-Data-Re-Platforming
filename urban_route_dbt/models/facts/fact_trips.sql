@@ -16,3 +16,4 @@ with trips as (
 
 select *
 from trips
+

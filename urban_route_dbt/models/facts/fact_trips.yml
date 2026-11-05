@@ -29,3 +29,4 @@ models:
 
       - name: duration_seconds
         description: Trip duration in seconds.
+

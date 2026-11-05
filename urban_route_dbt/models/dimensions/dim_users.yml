@@ -24,3 +24,4 @@ models:
 
       - name: is_active
         description: Indicates whether the customer account is active.
+

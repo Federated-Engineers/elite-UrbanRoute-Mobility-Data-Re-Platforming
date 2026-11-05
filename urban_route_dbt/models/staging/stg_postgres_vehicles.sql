@@ -13,3 +13,4 @@ with vehicles as (
 
 select *
 from vehicles
+

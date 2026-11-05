@@ -44,3 +44,4 @@ with app_payments as (
 
 select *
 from all_payments
+

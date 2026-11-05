@@ -13,3 +13,4 @@ with users as (
 
 select *
 from users
+
