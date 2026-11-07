@@ -1,0 +1,42 @@
+
+version: 2
+models:
+
+  - name: stg_s3_trips
+    description: |
+      Staging model for trip records exposed through the Snowflake
+      external table connected to the Amazon S3 telemetry data lake.
+      Extracts structured trip attributes from the external table
+      for downstream trip enrichment and fact modelling.
+
+    columns:
+      - name: trip_id
+        description: "Unique identifier assigned to each trip."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: user_id
+        description: "Identifier of the customer who undertook the trip."
+
+      - name: vehicle_id
+        description: "Identifier of the vehicle used for the trip."
+
+      - name: start_time
+        description: "Timestamp when the trip started."
+
+      - name: end_time
+        description: "Timestamp when the trip ended."
+
+      - name: start_station_id
+        description: "Identifier of the station where the trip started."
+
+      - name: end_station_id
+        description: "Identifier of the station where the trip ended."
+
+      - name: distance_meters
+        description: "Recorded distance travelled during the trip, in metres."
+
+      - name: duration_seconds
+        description: "Recorded duration of the trip, in seconds."
+

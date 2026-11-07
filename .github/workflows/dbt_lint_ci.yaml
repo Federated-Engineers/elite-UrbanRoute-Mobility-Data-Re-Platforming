@@ -1,0 +1,38 @@
+name: urban_route_ci_pipeline
+
+"on":
+  pull_request:
+    paths:
+      - "**/*.sql"
+      - "urban_route_dbt/models/**"
+      - "urban_route_dbt/dbt_project.yml"
+      - "requirement.txt"
+      - "requirement-dev.txt"
+      - ".sqlfluff"
+      - ".github/workflows/**"
+
+jobs:
+  dbt-ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: | 
+            requirement.txt
+            requirement-dev.txt
+
+      - name: Install dependencies
+        run: | 
+          pip install -r requirement.txt 
+          pip install -r requirement-dev.txt
+
+      - name: Run SQLFluff lint
+        run: sqlfluff lint urban_route_dbt/models/
+

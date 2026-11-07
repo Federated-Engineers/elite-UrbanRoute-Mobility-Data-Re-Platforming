@@ -1,0 +1,31 @@
+version: 2
+
+models:
+
+  - name: marts_daily_fleet_performance
+    description: |
+      Gold daily fleet performance mart combining trip activity,
+      vehicle classifications and reconciled financial metrics.
+      Designed for executive reporting and fleet performance analysis.
+
+    columns:
+      - name: date
+        description: Daily reporting date.
+        data_tests:
+          - not_null
+
+      - name: vehicle_type
+        description: Vehicle classification.
+
+      - name: total_trips
+        description: Total number of trips per day and vehicle type.
+
+      - name: total_gross_revenue_eur
+        description: Gross revenue in EUR.
+
+      - name: total_refunds_eur
+        description: Total refunds in EUR.
+
+      - name: total_net_revenue_eur
+        description: Net revenue in EUR after applicable discounts and refunds.
+

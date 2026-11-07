@@ -1,0 +1,27 @@
+version: 2
+
+models:
+
+  - name: dim_users
+    description: |
+      Silver customer dimension containing the definitive user
+      attributes from the operational PostgreSQL source.
+    columns:
+      - name: user_id
+        description: Unique customer identifier.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: registration_date
+        description: Customer registration date.
+
+      - name: user_segment
+        description: Customer classification, Retail or Corporate.
+
+      - name: country_code
+        description: Customer country code.
+
+      - name: is_active
+        description: Indicates whether the customer account is active.
+

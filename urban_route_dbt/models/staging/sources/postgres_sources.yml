@@ -1,0 +1,14 @@
+version: 2
+sources:
+  - name: postgres
+    description: Raw csv data loaded from PostgreSQL via Airflow
+    database: URBAN_ROUTE_DB
+    schema: RAW
+    tables:
+      - name: users
+        description: Raw user data
+      - name: vehicles
+        description: Raw vehicle data
+      - name: app_payments
+        description: Raw app payment csv data
+

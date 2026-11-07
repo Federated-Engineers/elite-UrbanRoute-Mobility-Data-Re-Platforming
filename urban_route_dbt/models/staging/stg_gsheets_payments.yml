@@ -1,0 +1,48 @@
+
+version: 2
+models:
+
+  - name: stg_gsheets_payments
+    description: |
+      Staging model for manual finance payment records originating
+      from the UrbanRoute Google Sheets finance tracker.
+      Includes offline payments, corporate invoices, bank transfers,
+      refunds and manual payment adjustments.
+
+    columns:
+      - name: payment_id
+        description: "Identifier assigned to the manual payment record."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: trip_id
+        description: "Identifier of the trip associated with the payment, where available."
+
+      - name: user_id
+        description: "Identifier of the customer associated with the payment, where available."
+
+      - name: payment_timestamp
+        description: "Timestamp associated with the manual payment record."
+
+      - name: source_system
+        description: "Source system identifying the origin of the payment record."
+
+      - name: gross_amount_eur
+        description: "Gross payment amount before discounts and refunds, in EUR."
+
+      - name: discount_amount_eur
+        description: "Discount applied to the manual payment, in EUR."
+
+      - name: refund_amount_eur
+        description: "Refund amount recorded by the finance team, in EUR."
+
+      - name: net_amount_eur
+        description: "Net payment amount recorded for the manual transaction, in EUR."
+
+      - name: notes
+        description: "Additional finance comments or descriptions associated with the payment."
+
+      - name: loaded_at
+        description: "Timestamp associated with loading the source record into Snowflake."
+

@@ -1,0 +1,32 @@
+
+version: 2
+models:
+
+  - name: stg_postgres_vehicles
+    description: |
+      Staging model for vehicle inventory records ingested from PostgreSQL.
+      Provides standardised vehicle attributes for fleet analysis
+      and dimensional modelling.
+
+    columns:
+      - name: vehicle_id
+        description: "Unique identifier assigned to each vehicle."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: vehicle_type
+        description: "Classification of the vehicle, such as Scooter or Bike."
+
+      - name: hardware_version
+        description: "Hardware version associated with the vehicle."
+
+      - name: deployment_date
+        description: "Date the vehicle was deployed into the fleet."
+
+      - name: current_status
+        description: "Current operational status of the vehicle."
+
+      - name: loaded_at
+        description: "Timestamp associated with loading the source record into Snowflake."
+

@@ -1,0 +1,32 @@
+
+version: 2
+
+models:
+  - name: stg_postgres_users
+    description: |
+      Staging model for customer records ingested from the operational
+      PostgreSQL database into the Snowflake RAW layer.
+      Standardises user information for downstream dimensional modelling.
+
+    columns:
+      - name: user_id
+        description: "Unique identifier for each UrbanRoute customer."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: registration_date
+        description: "Date the customer registered on the UrbanRoute platform."
+
+      - name: user_segment
+        description: "Customer classification, such as Retail or Corporate."
+
+      - name: country_code
+        description: "Country code associated with the customer."
+
+      - name: is_active
+        description: "Indicates whether the customer account is active."
+
+      - name: loaded_at
+        description: "Timestamp associated with loading the source record into Snowflake."
+

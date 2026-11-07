@@ -1,0 +1,31 @@
+
+name: urban_route_dbt
+version: "1.0.0"
+config-version: 2
+
+profile: urban_route_dbt
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  urban_route_dbt:
+    staging:
+      +materialized: view
+      +schema: SILVER
+
+    dimensions:
+      +materialized: table
+      +schema: SILVER
+
+    facts:
+      +materialized: table
+      +schema: SILVER
+
+    marts:
+      +materialized: table
+      +schema: GOLD

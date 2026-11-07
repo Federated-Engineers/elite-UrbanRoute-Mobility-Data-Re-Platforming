@@ -1,0 +1,10 @@
+version: 2
+sources:
+  - name: s3
+    description: Raw json transaction data loaded from S3 via Airflow
+    database: URBAN_ROUTE_DB
+    schema: RAW
+    tables:
+      - name: trips
+        description: Raw trip data
+
